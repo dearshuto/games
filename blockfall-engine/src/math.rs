@@ -4,6 +4,15 @@ pub struct Vec2 {
     pub y: i32,
 }
 
+impl Vec2 {
+    pub fn add(&self, rhs: &Vec2) -> Vec2 {
+        Vec2 {
+            x: self.x + rhs.x,
+            y: self.y + rhs.y,
+        }
+    }
+}
+
 pub struct Mat3x2 {
     m: [i32; 6],
 }
@@ -19,6 +28,18 @@ impl Mat3x2 {
     pub fn new_transform(t: &Vec2) -> Self {
         Self {
             m: [1, 0, t.x, 0, 1, t.y],
+        }
+    }
+
+    pub fn new_rotate_clockwise() -> Self {
+        Self {
+            m: [0, 1, 0, -1, 0, 0],
+        }
+    }
+
+    pub fn new_rotate_counter_clockwise() -> Self {
+        Self {
+            m: [0, -1, 0, 1, 0, 0],
         }
     }
 

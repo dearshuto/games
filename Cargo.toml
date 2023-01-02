@@ -1,4 +1,5 @@
 [workspace]
 members = [
-  "blockfall-engine"
+  "blockfall-engine",
+  "life-engine"
 ]
